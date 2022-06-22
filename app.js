@@ -1,3 +1,3 @@
-var counter =require('./count');
+var counter = require('./count');
 
-console.log(counter["karan","pranav","prajwal"]);
+console.log(counter(["karan","pranav","prajwal"]));
