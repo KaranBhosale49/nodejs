@@ -13,6 +13,7 @@ else if(req.url ==="/api"){
         name:"karan",
         sirname:"bhosale"
     }
+    
     res.end(JSON.stringify(obj));
 }
 else {
