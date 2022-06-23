@@ -8,6 +8,7 @@ app.get('/api',(req,res)=>{
     res.sendFile(__dirname+'/home.html');
 })
 app.get('/profile/:name',function(req,res){
-    res.render('profile',{person: req.params.name});
+    var data ={age:24, job:'ninja'};
+    res.render('profile',{person: req.params.name,data: data});
 })
 app.listen(3000);
