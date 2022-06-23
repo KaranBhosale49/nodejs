@@ -6,7 +6,13 @@ var fs = require('fs');
 var myReadStream = fs.createReadStream('read.txt','utf8');
 var mywritestream =fs.createWriteStream('wr.txt');
 
+
+
 myReadStream.on('data',function(chunk){
     console.log('new chunk received');
     mywritestream.write(chunk);
 });
+
+
+//Using pipeline is will do same thing as above we can only read data from readstream not from writestream
+myReadStream.pipe(mywritestream);
