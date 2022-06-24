@@ -16,7 +16,7 @@ app.get('/contact',(req,res)=>{
 })
 app.post('/contact',urlencodedparser ,(req,res)=>{
     console.log(req.body);
-    res.render('contact',{qs:req.query})
+    res.render('contact-sucess',{qs:req.body})
 })
 app.get('/profile/:name',function(req,res){
     var data ={age:24, job:'ninja',hobbies:['eating','fishing','running']};
