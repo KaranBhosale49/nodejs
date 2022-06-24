@@ -3,19 +3,12 @@
 <style>
  body{background-color: skyblue; font-family: Verdana ;color:white ;padding: 30px;}
  h1{font-size: 48px;text-transform: uppercase;letter-spacing: 2px;text-align: center;}
- p,li{text-align: center;font-size: 16px;}
+ p{text-align: center;font-size: 16px;}
 </style>
 </head>
 <body>
     <%- include ('partials/nav'); %>
-    <h1>Welcome to Profile <%=person %> </h1>
+    <h1>Contact page !!!</h1>
     <p>you won't find better website anywhere</p>
-    <p><strong>Age : <%=data.age %></strong></p>
-    <p><strong>Job: <%= data.job %></strong></p>
-    <ul>
-        <% data.hobbies.forEach(function(iteam){ %>
-        <li><%= iteam %></li>
-        <%   }); %>
-    </ul>
 </body>
 </html>
