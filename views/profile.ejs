@@ -5,11 +5,11 @@
 <body>
     <%- include ('partials/nav'); %>
     <h1>Welcome to Profile <%=person %> </h1>
-    <p>you won't find better website anywhere</p>
-    <p><strong>Age : <%=data.age %></strong></p>
-    <p><strong>Job: <%= data.job %></strong></p>
+    <p>your profile</p>
+    <p><strong>Age : <%=dat.age %></strong></p>
+    <p><strong>Job: <%= dat.job %></strong></p>
     <ul>
-        <% data.hobbies.forEach(function(iteam){ %>
+        <% dat.hobbies.forEach(function(iteam){ %>
         <li><%= iteam %></li>
         <%   }); %>
     </ul>
