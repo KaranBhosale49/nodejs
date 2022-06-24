@@ -4,9 +4,21 @@
 </head>
 <body>
 
+   <p> <%= qs.dept %></p>
+   <p> <%= qs.person %></p>
+
     <%- include ('partials/nav'); %>
     <h1>Contact page !!!</h1>
     <p>this is contact page</p>
+<form id="contact-form">
+<label for="who">who do you want to contact?</label>
+<input type="text" name="who" value="<%= qs.person %>"><br>
+<label for="department">which is your department?</label>
+<input type="text" name="department" value="<%= qs.dept %>"><br>
+<label for="email">Email</label>
+<input type="email" name="email">
+<input type="submit" name="submit">
+</form>
 
 </body>
 </html>

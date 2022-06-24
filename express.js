@@ -8,7 +8,7 @@ app.get('/',function(req,res){
 res.render('index')
 });
 app.get('/contact',(req,res)=>{
-    res.render('contact')
+    res.render('contact',{qs:req.query})
 })
 app.get('/profile/:name',function(req,res){
     var data ={age:24, job:'ninja',hobbies:['eating','fishing','running']};
