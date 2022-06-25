@@ -10,7 +10,20 @@ mongoose.connect(db);
 app.get('/',function(req,res){
     res.send('happy to be here');
 });
-
+app.get('/books/:id',function(req,res){
+    console.log('getting one book');
+    Book.findOne({
+        _id: req.params.id
+    })
+    .exec(function(err,book){
+        if(err){
+            res.send('error occured');
+        }else{
+            console.log(book);
+            res.json(book);
+        }
+    })
+})
 app.get('/books',function(req,res){
     console.log('getting books');
     Book.find({})
