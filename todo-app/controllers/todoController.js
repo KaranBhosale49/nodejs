@@ -15,7 +15,9 @@ res.json(data);
 
 
 app.delete('/todo',function(req,res){
-
+data=data.filter(function(todo){
+    return todo.item.replace(/ /g,'-')!==req.params.item;
+})
 });
 
 };

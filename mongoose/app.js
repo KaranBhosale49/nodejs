@@ -92,7 +92,7 @@ app.delete('/book/:id',function(req,res){
         }
         else{
             console.log(book)
-            res.status(204);
+            res.send(book);
         }
     })
 })
