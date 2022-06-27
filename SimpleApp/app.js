@@ -1,25 +1,35 @@
 var express=require('express');
 var app=express();
-
+var bodyParser=require('body-parser')
 var mongoose=require('mongoose');
 mongoose.connect('mongodb://localhost/Node');
 
 var User=require('./User.model');
 app.set('view engine','ejs');
 
+app.use(bodyParser.urlencoded({extended:true}))
 
 app.get('/',function(req,res){
     res.render('home');
 })
-
-app.get('/add', function(req, res,next) {
-    res.render('add-form');
+app.get('/display', function(req, res) {
+    User.find(function(err, users) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render('display', { users: users });
+        console.log(users);
+      }
+  });
 });
 
 
-app.post('/add', function(req, res,next) {
-    console.log(req.body);
+app.get('/add', function(req, res,urlencoded) {
+    res.render('add-form');
+});
 
+app.post('/add', function(req, res,urlencoded) {
+    console.log(req.body);
     const mybodydata = {
         username: req.body.username,
         useremail: req.body.useremail,
