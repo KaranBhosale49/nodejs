@@ -5,7 +5,8 @@ var Practice=express();
 var pra=require('./P.model')
 mongoose.connect('mongodb://localhost/example');
 
-Practice.use(bodyParser.json())
+Practice.use(bodyParser.json());
+Practice.set('view engine','ejs')
 Practice.use(bodyParser.urlencoded({
     extended:true
 }));
@@ -32,6 +33,20 @@ Practice.post('/pra',function(req,res){
 
 Practice.get('/pra',function(req,res){
     pra.find({})
+    .exec(function(err,Practi){
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.send(Practi);
+        }
+    })
+})
+
+Practice.get('/pra/:id',function(req,res){
+    pra.findOne({
+        id:req.params.id
+    })
     .exec(function(err,Practi){
         if(err){
             res.send(err);
